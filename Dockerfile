@@ -6,6 +6,7 @@ RUN apt-get update \
     automake \
     build-essential \
     ca-certificates \
+    curl \
     git \
     libcairo2-dev \
     libicu-dev \
@@ -25,11 +26,14 @@ RUN apt-get update \
   && make training-install \
   && ldconfig \
   && cd / \
+  && curl -o /usr/local/share/tessdata/eng.traineddata \
+    https://raw.githubusercontent.com/tesseract-ocr/tessdata/master/eng.traineddata \
   && apt-get purge --auto-remove -y \
     autoconf \
     automake \
     build-essential \
     ca-certificates \
+    curl \
     git \
     libtool \
   && apt-get clean \
