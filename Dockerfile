@@ -15,7 +15,7 @@ RUN apt-get update \
     libtiff5-dev \
     libtool \
     zlib1g-dev \
-  && git clone --branch 3.04.01 https://github.com/tesseract-ocr/tesseract.git /tmp/tesseract \
+  && git clone --branch 3.04.01 --depth 1 https://github.com/tesseract-ocr/tesseract.git /tmp/tesseract \
   && cd /tmp/tesseract \
   && ./autogen.sh \
   && ./configure \
